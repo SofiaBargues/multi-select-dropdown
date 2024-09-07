@@ -1,50 +1,21 @@
-# React + TypeScript + Vite
+# Multi-Select Dropdown Component Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Objective:
 
-Currently, two official plugins are available:
+Create a **multi-select dropdown component** using **React**. This component will allow users to select multiple options (US states in this case) from a dropdown menu and display the number of selected options. This challenge is designed to test your understanding of React, state management, and handling user input dynamically.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requirements:
 
-## Expanding the ESLint configuration
+1. **Dropdown Menu**:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   - Display a list of US states in the dropdown.
+   - The user should be able to select one or multiple states from the dropdown.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2. **Selected States Counter**:
+   - Display the number of states currently selected by the user.
+3. **State Management**:
+   - Store the selected states in the component's state.
+   - Ensure that this state updates dynamically as the user selects or deselects states.
+4. **Dynamic Feedback**:
+   - As states are selected, the component should update the count of selected states in real time.
+   - Display the total number of selected states within the component interface.
