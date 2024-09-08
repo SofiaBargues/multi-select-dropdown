@@ -64,7 +64,7 @@ function App() {
   }
 
   const namesBoxes = names.map((x, i) => (
-    <label>
+    <label className={clickedElements[i] === true ? " bg-sky-100" : ""}>
       <input
         onClick={() => handleClick(i)}
         checked={clickedElements[i]}
@@ -79,21 +79,23 @@ function App() {
   const countClicked = clickedElements.filter((x) => x).length;
 
   return (
-    <div className="flex flex-col justify-center h-screen bg-slate-200 ">
+    <div className="flex flex-col justify-center h-screen bg-[#dfdfdf] ">
       <h1 className="text-2xl flex justify-center m-11">Multi-Select #5</h1>
       <div className="flex flex-col gap-2 ">
         <button
-          className="flex p-5  w-[400px] justify-around  bg-white shadow-lg m-auto"
+          className="flex p-2 rounded-sm  w-[400px] justify-between  bg-[#ededed] shadow-lg m-auto"
           onClick={() => setIsExpanded(!isExpanded)}
         >
-          <div>{countClicked}</div>
-          <div>selected ▼</div>
+          <div>{countClicked} selected </div>
+          <div>▼</div>
         </button>
         <div className=" m-auto shadow-lg ">
           {isExpanded ? (
-            <div className="flex flex-col p-5  bg-white max-w-[700px] ">
-              <div>Search states:</div>
-              <div className={"grid grid-cols-3 gap-x-2 "}>{namesBoxes}</div>
+            <div className="flex flex-col p-5 rounded-sm  bg-[#ededed] max-w-[700px] ">
+              <div className="pb-5 text-[#c5c5c5] font-semibold">
+                Search states:
+              </div>
+              <div className="grid grid-cols-3 gap-x-2 ">{namesBoxes}</div>
             </div>
           ) : (
             <div></div>
