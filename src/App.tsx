@@ -52,19 +52,21 @@ const names = [
   "Wyoming",
 ];
 function App() {
-  const [isClicked, setIsClicked] = useState(new Array(49).fill(false));
+  const [clickedElements, setClickedElements] = useState(
+    new Array(49).fill(false)
+  );
 
-  function handleClick(i) {
-    const cosa = [...isClicked];
-    cosa[i] = !isClicked[i];
-    setIsClicked(cosa);
+  function handleClick(i: number) {
+    const cosa = [...clickedElements];
+    cosa[i] = !clickedElements[i];
+    setClickedElements(cosa);
   }
 
   const namesBoxes = names.map((x, i) => (
     <label>
       <input
         onClick={() => handleClick(i)}
-        checked={isClicked[i]}
+        checked={clickedElements[i]}
         type="checkbox"
         id={x}
         value={x}
