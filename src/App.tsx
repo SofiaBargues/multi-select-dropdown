@@ -53,7 +53,7 @@ const names = [
 ];
 function App() {
   const [clickedElements, setClickedElements] = useState(
-    new Array(49).fill(false)
+    new Array(names.length).fill(false)
   );
 
   function handleClick(i: number) {
