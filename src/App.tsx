@@ -83,7 +83,7 @@ function App() {
       <h1 className="text-2xl flex justify-center m-11">Multi-Select #5</h1>
       <div className="flex flex-col gap-2 ">
         <button
-          className="flex p-2 rounded-sm  w-[400px] justify-between  bg-[#ededed] shadow-lg m-auto"
+          className="flex p-2 rounded-sm  w-[400px] justify-between  bg-[#ffffff] shadow-lg m-auto"
           onClick={() => setIsExpanded(!isExpanded)}
         >
           <div>{countClicked} selected </div>
@@ -91,7 +91,7 @@ function App() {
         </button>
         <div className=" m-auto shadow-lg ">
           {isExpanded ? (
-            <div className="flex flex-col p-5 rounded-sm  bg-[#ededed] max-w-[700px] ">
+            <div className="flex flex-col p-5 rounded-sm  bg-[#ffffff] max-w-[700px] ">
               <div className="pb-5 text-[#c5c5c5] font-semibold">
                 Search states:
               </div>
