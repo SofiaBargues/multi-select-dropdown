@@ -52,6 +52,7 @@ const names = [
   "Wyoming",
 ];
 function App() {
+  const [isExpanded, setIsExpanded] = useState(false);
   const [clickedElements, setClickedElements] = useState(
     new Array(names.length).fill(false)
   );
@@ -75,13 +76,31 @@ function App() {
     </label>
   ));
 
+  const countClicked = clickedElements.filter((x) => x).length;
+
   return (
-    <fieldset className="flex flex-col ">
-      <legend>Choose your monster's features:</legend>
-      <div className="flex flex-col max-w-64 ">
-        <form>{namesBoxes}</form>
+    <div className="flex flex-col justify-center h-screen bg-slate-200 ">
+      <h1 className="text-2xl flex justify-center m-11">Multi-Select #5</h1>
+      <div className="flex flex-col gap-2 ">
+        <button
+          className="flex p-5  w-[400px] justify-around  bg-white shadow-lg m-auto"
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          <div>{countClicked}</div>
+          <div>selected ▼</div>
+        </button>
+        <div className=" m-auto shadow-lg ">
+          {isExpanded ? (
+            <div className="flex flex-col p-5  bg-white max-w-[700px] ">
+              <div>Search states:</div>
+              <div className={"grid grid-cols-3 gap-x-2 "}>{namesBoxes}</div>
+            </div>
+          ) : (
+            <div></div>
+          )}
+        </div>
       </div>
-    </fieldset>
+    </div>
   );
 }
 
